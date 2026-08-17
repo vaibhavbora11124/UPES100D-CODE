@@ -11,6 +11,7 @@
 // Output 2:
 // Sum = 19
 #include <stdio.h>
+
 int add(int a, int b)
 {
     return a + b;
@@ -19,10 +20,8 @@ int add(int a, int b)
 int main()
 {
     int a, b;
-    printf("Enter a number: ");
-    scanf("%d", &a);
-    printf("Enter another number: ");
-    scanf("%d", &b);
-    printf("Sum: %d\n", add(a, b));
+    if (scanf("%d %d", &a, &b) != 2)
+        return 0;
+    printf("Sum = %d\n", add(a, b));
     return 0;
 }
