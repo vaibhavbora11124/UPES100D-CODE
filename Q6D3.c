@@ -11,24 +11,16 @@ Input 2:
 -1 1
 Output 2:
 After swap: 1 -1
-
 */
 #include <stdio.h>
 
-int main()
+int main(void)
 {
     int a, b, temp;
-
-    printf("Enter value of a: ");
-    scanf("%d", &a);
-    printf("Enter value of b: ");
-    scanf("%d", &b);
-
+    if (scanf("%d %d", &a, &b) != 2) return 0;
     temp = a;
     a = b;
     b = temp;
-
-    printf("After swapping: a = %d, b = %d\n", a, b);
-
+    printf("After swap: %d %d\n", a, b);
     return 0;
 }
