@@ -11,28 +11,16 @@ Input 2:
 3 7
 Output 2:
 Area=21, Perimeter=20
-
 */
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-    float length, breadth, area, perimeter;
-
-    // Take inputs from user
-    printf("Enter the length of the rectangle: ");
-    scanf("%f", &length);
-
-    printf("Enter the breadth of the rectangle: ");
-    scanf("%f", &breadth);
-
-    // Perform operations
-    area = length * breadth;
-    perimeter = 2 * (length + breadth);
-
-    // Display results
-    printf("\nArea of the rectangle: %.2f\n", area);
-    printf("Perimeter of the rectangle: %.2f\n", perimeter);
-
+    double length, breadth;
+    if (scanf("%lf %lf", &length, &breadth) != 2) return 0;
+    double area = length * breadth;
+    double perimeter = 2 * (length + breadth);
+    // Match sample formatting with no decimals when inputs are integers
+    printf("Area=%.0f, Perimeter=%.0f\n", area, perimeter);
     return 0;
 }
