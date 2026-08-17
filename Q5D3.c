@@ -11,16 +11,14 @@ Input 2:
 100
 Output 2:
 Fahrenheit=212
-
 */
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-    int a, b;
-    printf("Enter temp(in Celsius) to convert to F:");
-    scanf("%d", &a);
-    b = (a * 9 / 5) + 32;
-    printf("The value in F is: %d", b);
+    int c;
+    if (scanf("%d", &c) != 1) return 0;
+    int f = (c * 9 / 5) + 32;
+    printf("Fahrenheit=%d\n", f);
     return 0;
 }
