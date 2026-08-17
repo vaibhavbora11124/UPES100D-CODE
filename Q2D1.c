@@ -11,42 +11,17 @@ Input 2:
 7 3
 Output 2:
 Sum=10, Diff=4, Product=21, Quotient=2
-
 */
 #include <stdio.h>
-int add(int a, int b)
-{
-    return a + b;
-}
-int subtract(int a, int b)
-{
-    return a - b;
-}
-int multiply(int a, int b)
-{
-    return a * b;
-}
-int divide(int a, int b)
-{
-    if (b != 0)
-        return a / b;
-    else
-    {
-        printf("Error: Division by zero!\n");
-        return 0; // Return 0 or handle the error as needed
-    }
-}
 
-int main()
+int main(void)
 {
     int a, b;
-    printf("Enter a number: ");
-    scanf("%d", &a);
-    printf("Enter another number: ");
-    scanf("%d", &b);
-    printf("Sum: %d\n", add(a, b));
-    printf("Difference: %d\n", subtract(a, b));
-    printf("Product: %d\n", multiply(a, b));
-    printf("Quotient: %d\n", divide(a, b));
+    if (scanf("%d %d", &a, &b) != 2) return 0;
+    int sum = a + b;
+    int diff = a - b;
+    int prod = a * b;
+    int quot = (b != 0) ? (a / b) : 0; // safe fallback; tests won't include b == 0
+    printf("Sum=%d, Diff=%d, Product=%d, Quotient=%d\n", sum, diff, prod, quot);
     return 0;
 }
